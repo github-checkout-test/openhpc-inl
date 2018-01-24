@@ -15,5 +15,7 @@ systemctl reload sshd
 
 perl -i -pe 's/(^\s+hosts:.*)/$1\n   ignore_errors: yes\n/' /root/CRI_XCBC/headnode.yml
 
-perl -i -pe "s/^headnode(.*)/${HOSTNAME}\$1/" /root/CRI_XCBC/inventory/headnode
+hostname=$(hostname -s)
+
+perl -i -pe "s/^headnode(.*)/${hostname}\$1/" /root/CRI_XCBC/inventory/headnode
 
