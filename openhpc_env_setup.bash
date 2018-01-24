@@ -1,13 +1,13 @@
 #!/bin/bash
 
-perl -i -pe 's/git:/https:/' /home/root/openhpc-inl/install_ansible.sh
+perl -i -pe 's/git:/https:/' /root/openhpc-inl/install_ansible.sh
 
 mkdir /root/.ssh
 chmod 700 /root/.ssh
 
 ssh-keygen -t rsa -f /root/.ssh/id_rsa -q -P ""
 
-cat /home/root/.ssh/id_rsa.pub >> /home/root/.ssh/authorized_keys
+cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 
 perl -i -pe 's/\s*\#?\s*PasswordAuthentication\s+\S+\s*$/PasswordAuthentication yes\n/g' /etc/ssh/sshd_config
 
