@@ -9,7 +9,7 @@ ssh-keygen -t rsa -f /root/.ssh/id_rsa -q -P ""
 
 cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 
-perl -i -pe 's/\s*\#?\s*PasswordAuthentication\s+\S+\s*$/PasswordAuthentication yes\n/g' /etc/ssh/sshd_config
+perl -i -pe 's/\s*\#?\s*PasswordAuthentication\s+\S+\s*$/PasswordAuthentication yes\n/g' /root/CRI_XCBC/roles/pre_ohpc/templates/sshd_config.j2
 
 systemctl reload sshd
 
