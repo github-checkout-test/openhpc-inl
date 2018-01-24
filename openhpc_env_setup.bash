@@ -1,6 +1,9 @@
 #!/bin/bash
 
-perl -i -pe 's/git:/https:/' install_ansible.sh
+perl -i -pe 's/git:/https:/' /home/root/openhpc-inl/install_ansible.sh
+
+mkdir /root/.ssh
+chmod 700 /root/.ssh
 
 ssh-keygen -t rsa -f /root/.ssh/id_rsa -q -P ""
 
